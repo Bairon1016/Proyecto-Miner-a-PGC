@@ -1,59 +1,250 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mineria de datos</title>
+    <title>Minería de Datos</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            background: #f4f6f9;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: linear-gradient(180deg, #4e54c8, #8f94fb);
+            color: white;
+            padding: 20px;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .sidebar h2 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .title-pill {
+            display: inline-block;
+            background: linear-gradient(90deg, #a977f0, #cbb4e9);
+            color: #1a1a1a;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .title-pill:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .menu button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .menu button:hover {
+            background: white;
+            color: #4e54c8;
+            transform: scale(1.05);
+        }
+
+        /* NOMBRES ABAJO */
+        .footer {
+            font-size: 13px;
+            text-align: left;
+            opacity: 0.9;
+            padding-left: 10px;
+        }
+
+        /* CONTENIDO */
+        .content {
+            margin-left: 270px;
+            padding: 30px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #4e54c8;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #4e54c8;
+            margin-bottom: 10px;
+        }
+
+        p, li {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        a {
+            color: #4e54c8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* TARJETAS */
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* OCULTAR SECCIONES */
+        .section {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+    </style>
 </head>
+
 <body>
-    <h1>Proyecto</h1>
 
-    <h2>Análisis Comparativo de Deserción Estudiantil en Modalidades Virtual y Presencial del SENA: Un Enfoque Regional</h2>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div>
+            <h2 class="title-pill">Proyecto 📊</h2>
+            <div class="menu">
+                <button onclick="showSection('resumen')">Resumen</button>
+                <button onclick="showSection('objetivo')">Objetivo</button>
+                <button onclick="showSection('especificos')">Objetivos Específicos</button>
+                <button onclick="showSection('resultados')">Resultados</button>
+                <button onclick="showSection('datos')">Fuente de Datos</button>
+            </div>
+        </div>
 
-    <h3>Resumen</h3>
-    <p>
-        La deserción estudiantil constituye un desafío crítico en la educación técnica y tecnológica colombiana. 
-        Este proyecto propone un análisis comparativo de los patrones de deserción entre las modalidades virtual y presencial del SENA, 
-        considerando variaciones regionales a nivel nacional. Mediante técnicas de minería de datos aplicadas a un conjunto de 42,080 
-        registros de fichas de formación, se busca identificar factores predictivos de abandono estudiantil y generar modelos de 
-        clasificación que permitan la intervención temprana.
-    </p>
+        <!-- NOMBRES -->
+        <div class="footer">
+            <p>Bairon Martínez</p>
+            <p>Lorenzo Lotero</p>
+            <p>Lucia Torres</p>
+            <p>Oscar Torres</p>
+        </div>
+    </div>
 
-    <h3>Objetivo General</h3>
-    <p>
-        Desarrollar un análisis comparativo de deserción estudiantil entre modalidades virtual y presencial del SENA mediante técnicas 
-        de minería de datos, identificando patrones regionales y factores predictivos para la implementación de estrategias diferenciadas de retención.
-    </p>
+    <!-- CONTENIDO -->
+    <div class="content">
 
-    <h3>Objetivos Específicos</h3>
-    <ul>
-        <li>Cuantificar y comparar las tasas de deserción entre programas virtuales y presenciales a nivel nacional.</li>
-        <li>Identificar diferencias regionales en los patrones de deserción para ambas modalidades educativas.</li>
-        <li>Construir modelos predictivos de clasificación que identifiquen fichas de formación en riesgo de alta deserción.</li>
-        <li>Desarrollar visualizaciones geográficas que mapeen la deserción por regional y modalidad.</li>
-    </ul>
+        <h1>Proyecto</h1>
+        <h2>Análisis Comparativo de Deserción Estudiantil en Modalidades Virtual y Presencial del SENA: Un Enfoque Regional</h2>
 
-    <h3>Resultados Esperados</h3>
-    <ul>
-        <li>Cuantificación estadística de diferencias en deserción entre modalidades virtual y presencial.</li>
-        <li>Mapa de calor mostrando tasas de deserción por regional y modalidad.</li>
-        <li>Modelo predictivo con precisión superior al 75% para identificación de fichas en riesgo.</li>
-    </ul>
+        <!-- SECCIONES -->
 
-    <h3>Fuente de Datos</h3>
-    <p>
-        El proyecto utiliza datos públicos del portal de Datos Abiertos Colombia, específicamente el conjunto de datos titulado 
-        “Deserción de la Formación Profesional Integral” del SENA. Este dataset contiene información actualizada sobre la deserción 
-        estudiantil en los programas de formación profesional a nivel nacional, incluyendo variables sobre modalidad de formación, 
-        ubicación geográfica, tipo de programa y número de aprendices matriculados y desertores.
-    </p>
+        <div id="resumen" class="section active">
+            <div class="card">
+                <h3>Resumen</h3>
+                <p>
+                    La deserción estudiantil constituye un desafío crítico en la educación técnica y tecnológica colombiana. 
+                    Este proyecto propone un análisis comparativo de los patrones de deserción entre las modalidades virtual y presencial del SENA, 
+                    considerando variaciones regionales a nivel nacional. Mediante técnicas de minería de datos aplicadas a un conjunto de 42,080 
+                    registros de fichas de formación, se busca identificar factores predictivos de abandono estudiantil y generar modelos de 
+                    clasificación que permitan la intervención temprana.
+                </p>
+            </div>
+        </div>
 
-    <p>
-        Dataset:
-        <a href="https://www.datos.gov.co/Trabajo/DESERCION-DE-LA-FORMACI-N-PROFESIONAL-INTEGRAL/u4ze-bi7k" target="_blank">
-            Ver fuente de datos
-        </a>
-    </p>
+        <div id="objetivo" class="section">
+            <div class="card">
+                <h3>Objetivo General</h3>
+                <p>
+                    Desarrollar un análisis comparativo de deserción estudiantil entre modalidades virtual y presencial del SENA mediante técnicas 
+                    de minería de datos, identificando patrones regionales y factores predictivos para la implementación de estrategias diferenciadas de retención.
+                </p>
+            </div>
+        </div>
+
+        <div id="especificos" class="section">
+            <div class="card">
+                <h3>Objetivos Específicos</h3>
+                <ul>
+                    <li>Cuantificar y comparar las tasas de deserción entre programas virtuales y presenciales a nivel nacional.</li>
+                    <li>Identificar diferencias regionales en los patrones de deserción para ambas modalidades educativas.</li>
+                    <li>Construir modelos predictivos de clasificación que identifiquen fichas de formación en riesgo de alta deserción.</li>
+                    <li>Desarrollar visualizaciones geográficas que mapeen la deserción por regional y modalidad.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="resultados" class="section">
+            <div class="card">
+                <h3>Resultados Esperados</h3>
+                <ul>
+                    <li>Cuantificación estadística de diferencias en deserción entre modalidades virtual y presencial.</li>
+                    <li>Mapa de calor mostrando tasas de deserción por regional y modalidad.</li>
+                    <li>Modelo predictivo con precisión superior al 75% para identificación de fichas en riesgo.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="datos" class="section">
+            <div class="card">
+                <h3>Fuente de Datos</h3>
+                <p>
+                    El proyecto utiliza datos públicos del portal de Datos Abiertos Colombia, específicamente el conjunto de datos titulado 
+                    “Deserción de la Formación Profesional Integral” del SENA. Este dataset contiene información actualizada sobre la deserción 
+                    estudiantil en los programas de formación profesional a nivel nacional, incluyendo variables sobre modalidad de formación, 
+                    ubicación geográfica, tipo de programa y número de aprendices matriculados y desertores.
+                </p>
+
+                <a href="https://www.datos.gov.co/Trabajo/DESERCION-DE-LA-FORMACI-N-PROFESIONAL-INTEGRAL/u4ze-bi7k" target="_blank">
+                
+                    <br>Ver fuente de datos ✅
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('.section');
+
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
